@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON Formatter & Validator — Rooted Dreams Tools</title>
+<meta name="description" content="Free online JSON formatter, validator and beautifier. A free tool by rooteddreams.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Code+Pro:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page-wrap">
+  <header class="tool-header">
+    <div class="tool-icon">🌿</div>
+    <div>
+      <h1 class="tool-title">JSON Formatter & Validator</h1>
+      <p class="tool-sub">Paste raw JSON to beautify, validate, and explore structure instantly</p>
+    </div>
+    <a class="tool-badge" href="https://www.rooteddreams.net/tools/json-formatter" target="_blank">Live Tool ↗</a>
+  </header>
+
+  <div class="controls">
+    <button class="btn btn-primary" onclick="rdFmtFormat()">⟳ Format JSON</button>
+    <button class="btn btn-secondary" onclick="rdFmtMinify()">⊡ Minify</button>
+    <button class="btn btn-secondary" onclick="rdFmtCopy()">⎘ Copy Output</button>
+    <button class="btn btn-danger" onclick="rdFmtClear()">✕ Clear</button>
+    <span class="indent-label">Indent:</span>
+    <select class="indent-select" id="rdFmtIndent">
+      <option value="2" selected>2 spaces</option>
+      <option value="4">4 spaces</option>
+      <option value="tab">Tab</option>
+    </select>
+  </div>
+
+  <div class="editors">
+    <div class="pane">
+      <div class="pane-label">Input JSON</div>
+      <textarea id="rdFmtInput" class="code-input"
+        placeholder='Paste your JSON here…' spellcheck="false"></textarea>
+    </div>
+    <div class="pane">
+      <div class="pane-label">Formatted Output</div>
+      <div class="code-output" id="rdFmtOutput">Your formatted JSON will appear here…</div>
+    </div>
+  </div>
+
+  <div class="status-bar" id="rdFmtStatus">
+    <div class="dot"></div>
+    <span id="rdFmtMsg">Waiting for input…</span>
+  </div>
+
+  <footer class="tool-footer">
+    A free tool by <a href="https://www.rooteddreams.net" target="_blank">rooteddreams.net</a> — Where Growth Meets Purpose
+    &nbsp;·&nbsp; <a href="https://github.com/RootedDreamsBlog/Web-Tools-Lab" target="_blank">GitHub</a>
+  </footer>
+</div>
+
+<div class="toast" id="rdFmtToast">✓ Copied to clipboard!</div>
+<script src="js/app.js"></script>
+</body>
+</html>

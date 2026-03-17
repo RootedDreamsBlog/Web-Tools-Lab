@@ -1,0 +1,96 @@
+/* =============================================
+   Password Generator — rooteddreams.net
+   CSS Stylesheet
+   ============================================= */
+
+:root {
+  --bark:      #3b2f1e;
+  --soil:      #5c4a32;
+  --moss:      #4a6741;
+  --leaf:      #a8c49a;
+  --parchment: #f5f0e8;
+  --cream:     #faf7f2;
+  --sand:      #e8dfd0;
+  --amber:     #c8973a;
+  --radius:    10px;
+  --font-mono: 'Source Code Pro', 'SFMono-Regular', Consolas, monospace;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: var(--font-body); background: var(--cream); color: var(--bark); min-height: 100vh; }
+
+body::before {
+  content: ''; position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235c4a32' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none; z-index: 0;
+}
+
+.page-wrap { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; }
+
+.tool-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 36px; padding-bottom: 24px; border-bottom: 2px solid var(--sand); }
+.tool-icon { width: 52px; height: 52px; border-radius: var(--radius); background: var(--moss); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 24px; }
+.tool-title { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--bark); }
+.tool-sub { font-size: 14px; color: var(--soil); margin-top: 4px; opacity: 0.8; }
+.tool-badge { margin-left: auto; flex-shrink: 0; background: var(--sand); color: var(--soil); font-size: 11px; font-weight: 500; padding: 5px 12px; border-radius: 20px; text-decoration: none; transition: background 0.2s; }
+.tool-badge:hover { background: var(--leaf); color: var(--bark); }
+
+/* Password card */
+.password-card { background: var(--bark); border-radius: 14px; padding: 26px 22px 20px; margin-bottom: 22px; }
+.card-label { font-size: 11px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: var(--leaf); opacity: .8; margin-bottom: 10px; }
+.password-display { font-family: var(--font-mono); font-size: 20px; font-weight: 700; color: var(--parchment); letter-spacing: 2px; word-break: break-all; line-height: 1.5; min-height: 56px; }
+.strength-track { height: 5px; background: rgba(255,255,255,.1); border-radius: 3px; overflow: hidden; margin-top: 14px; }
+.strength-fill { height: 100%; border-radius: 3px; transition: width .4s, background .4s; }
+.strength-labels { display: flex; justify-content: space-between; margin-top: 6px; }
+.strength-text { font-size: 11px; font-weight: 700; letter-spacing: .4px; }
+.entropy-text { font-size: 11px; color: var(--leaf); opacity: .6; }
+.card-actions { display: flex; gap: 10px; margin-top: 16px; }
+
+/* Buttons */
+.btn { font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: 7px; border: 1.5px solid transparent; cursor: pointer; transition: all .18s; font-family: var(--font-body); }
+.btn-primary { background: var(--moss); color: #fff; border-color: var(--moss); }
+.btn-primary:hover { background: #3a5534; }
+.btn-amber { background: var(--amber); color: #fff; border-color: var(--amber); }
+.btn-amber:hover { background: #b8872a; }
+.btn-light { background: rgba(255,255,255,.1); color: var(--parchment); border-color: rgba(255,255,255,.15); }
+.btn-light:hover { background: rgba(255,255,255,.18); }
+.btn-outline { background: transparent; color: var(--soil); border-color: var(--sand); }
+.btn-outline:hover { border-color: var(--moss); color: var(--moss); }
+
+/* Settings card */
+.settings-card { background: #fff; border: 1.5px solid var(--sand); border-radius: 12px; padding: 22px; margin-bottom: 18px; }
+.section-label { font-size: 11px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: var(--soil); opacity: .7; }
+.slider-row { margin: 18px 0; }
+.slider-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.slider-name { font-size: 14px; font-weight: 500; }
+.slider-val { font-family: var(--font-mono); font-size: 18px; font-weight: 700; color: var(--moss); background: var(--parchment); padding: 2px 12px; border-radius: 6px; }
+.range-input { -webkit-appearance: none; width: 100%; height: 6px; background: var(--sand); border-radius: 3px; outline: none; cursor: pointer; }
+.range-input::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: var(--moss); border: 3px solid #fff; box-shadow: 0 2px 6px rgba(74,103,65,.3); }
+
+/* Options grid */
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+@media(max-width:480px) { .options-grid { grid-template-columns: 1fr; } }
+.option-row { display: flex; align-items: center; gap: 11px; padding: 10px 13px; border-radius: 8px; border: 1.5px solid var(--sand); cursor: pointer; transition: all .15s; user-select: none; }
+.option-row:hover { border-color: var(--leaf); background: var(--parchment); }
+.option-row.active { border-color: var(--moss); background: rgba(74,103,65,.07); }
+.option-check { width: 18px; height: 18px; border-radius: 4px; border: 2px solid var(--sand); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all .15s; position: relative; }
+.option-row.active .option-check { background: var(--moss); border-color: var(--moss); }
+.option-check::after { content: '✓'; font-size: 11px; color: #fff; opacity: 0; transition: opacity .15s; }
+.option-row.active .option-check::after { opacity: 1; }
+.option-name { font-size: 13px; font-weight: 500; }
+.option-example { font-family: var(--font-mono); font-size: 11px; color: var(--soil); opacity: .6; margin-top: 1px; }
+
+/* Bulk */
+.bulk-card { background: var(--parchment); border: 1.5px solid var(--sand); border-radius: 12px; padding: 18px 22px; margin-bottom: 18px; }
+.bulk-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.bulk-list { font-family: var(--font-mono); font-size: 13px; line-height: 1.9; color: var(--bark); max-height: 155px; overflow-y: auto; white-space: pre; }
+.bulk-row { display: flex; gap: 10px; margin-top: 16px; }
+
+.privacy-note { font-size: 12px; color: var(--soil); opacity: .6; text-align: center; margin-bottom: 16px; }
+.tool-footer { text-align: center; font-size: 12px; color: var(--soil); opacity: .6; }
+.tool-footer a { color: var(--moss); text-decoration: none; }
+.tool-footer a:hover { text-decoration: underline; }
+
+.toast { position: fixed; bottom: 28px; right: 28px; background: var(--bark); color: var(--parchment); padding: 11px 18px; border-radius: 9px; font-size: 13px; font-weight: 500; opacity: 0; pointer-events: none; transform: translateY(8px); transition: all .3s; z-index: 100; }
+.toast.show { opacity: 1; transform: translateY(0); }

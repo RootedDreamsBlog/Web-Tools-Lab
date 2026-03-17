@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Generator — Rooted Dreams Tools</title>
+<meta name="description" content="Free secure password generator. Create strong, random passwords. A free tool by rooteddreams.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Code+Pro:wght@500;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page-wrap">
+  <header class="tool-header">
+    <div class="tool-icon">🔑</div>
+    <div>
+      <h1 class="tool-title">Password Generator</h1>
+      <p class="tool-sub">Create strong, random passwords — no data leaves your browser</p>
+    </div>
+    <a class="tool-badge" href="https://www.rooteddreams.net/tools/password-generator" target="_blank">Live Tool ↗</a>
+  </header>
+
+  <div class="password-card">
+    <div class="card-label">Generated Password</div>
+    <div class="password-display" id="rdpwDisplay">Click Generate →</div>
+    <div class="strength-track"><div class="strength-fill" id="rdpwFill" style="width:0%"></div></div>
+    <div class="strength-labels">
+      <span class="strength-text" id="rdpwStrTxt"></span>
+      <span class="entropy-text" id="rdpwEntr"></span>
+    </div>
+    <div class="card-actions">
+      <button class="btn btn-amber" onclick="rdpwGen()">⟳ Generate</button>
+      <button class="btn btn-light" onclick="rdpwCopy('rdpwDisplay')">⎘ Copy</button>
+    </div>
+  </div>
+
+  <div class="settings-card">
+    <div class="section-label">Password Settings</div>
+    <div class="slider-row">
+      <div class="slider-head">
+        <span class="slider-name">Length</span>
+        <span class="slider-val" id="rdpwLenVal">16</span>
+      </div>
+      <input type="range" class="range-input" id="rdpwLen" min="4" max="64" value="16"
+             oninput="document.getElementById('rdpwLenVal').textContent=this.value;rdpwGen()">
+    </div>
+    <div class="options-grid">
+      <div class="option-row active" id="rdpwOptUpper" onclick="rdpwToggle('Upper',this)">
+        <div class="option-check"></div>
+        <div><div class="option-name">Uppercase</div><div class="option-example">A B C … Z</div></div>
+      </div>
+      <div class="option-row active" id="rdpwOptLower" onclick="rdpwToggle('Lower',this)">
+        <div class="option-check"></div>
+        <div><div class="option-name">Lowercase</div><div class="option-example">a b c … z</div></div>
+      </div>
+      <div class="option-row active" id="rdpwOptNums" onclick="rdpwToggle('Nums',this)">
+        <div class="option-check"></div>
+        <div><div class="option-name">Numbers</div><div class="option-example">0 1 2 … 9</div></div>
+      </div>
+      <div class="option-row active" id="rdpwOptSyms" onclick="rdpwToggle('Syms',this)">
+        <div class="option-check"></div>
+        <div><div class="option-name">Symbols</div><div class="option-example">! @ # $ % &amp;</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bulk-card">
+    <div class="bulk-head">
+      <span class="section-label">Bulk Generate</span>
+      <button class="btn btn-outline" style="font-size:12px;padding:5px 13px" onclick="rdpwCopy('rdpwBulk')">⎘ Copy All</button>
+    </div>
+    <div class="bulk-list" id="rdpwBulk">—</div>
+    <div class="bulk-row">
+      <button class="btn btn-primary" onclick="rdpwBulkGen(5)">Generate 5</button>
+      <button class="btn btn-primary" onclick="rdpwBulkGen(10)">Generate 10</button>
+    </div>
+  </div>
+
+  <p class="privacy-note">🔒 Passwords are generated locally using Web Crypto API — never sent to any server</p>
+
+  <footer class="tool-footer">
+    A free tool by <a href="https://www.rooteddreams.net" target="_blank">rooteddreams.net</a>
+    &nbsp;·&nbsp; <a href="https://github.com/RootedDreamsBlog/Web-Tools-Lab" target="_blank">GitHub</a>
+  </footer>
+</div>
+<div class="toast" id="rdpwToast">✓ Copied!</div>
+<script src="js/app.js"></script>
+</body>
+</html>
