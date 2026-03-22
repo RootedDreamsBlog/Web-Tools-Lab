@@ -22,7 +22,7 @@ These tools are especially useful for:
 - API developers
 - UI/UX designers
 - Software engineers
-- students learning programming
+- Students learning programming
 
 ## Website
 
