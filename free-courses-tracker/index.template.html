@@ -354,10 +354,10 @@
 
   <!-- INTRO -->
   <div class="rd-intro">
-    <div class="rd-intro-left">
-      <h1>Free &amp; Discounted Tech Courses Tracker</h1>
-        <p>Curated from <a href="www.google.com" target="_blank">Google</a>, <a href="www.coursera.org" target="_blank">Coursera</a>, <a href="www.freecodecamp.org" target="_blank">freeCodeCamp</a>, <a href="www.edx.org" target="_blank">edX</a>, <a href="www.microsoft.com" target="_blank">Microsoft</a>, <a href="www.aws.amacon.com" target="_blank">AWS</a> and more</p>
-    </div>
+      <div class="rd-intro-left">
+          <h1>Free &amp; Discounted Tech Courses Tracker</h1>
+          <p>Curated from <a href="www.google.com" target="_blank">Google</a>, <a href="www.coursera.org" target="_blank">Coursera</a>, <a href="www.freecodecamp.org" target="_blank">freeCodeCamp</a>, <a href="www.edx.org" target="_blank">edX</a>, <a href="www.microsoft.com" target="_blank">Microsoft</a>, <a href="www.aws.amacon.com" target="_blank">AWS</a> and more</p>
+      </div>
     <div class="rd-stats">
       <div class="rd-stat">
         <span class="rd-stat-n" id="rd-total">—</span>
@@ -379,19 +379,7 @@
   <div class="rd-plat-wrap">
     <div class="rd-plat-inner">
       <button class="rd-pp on" onclick="rdPlat('',this)">All</button>
-      <button class="rd-pp" onclick="rdPlat('Google',this)"><span class="rd-dot" style="background:#4285f4"></span>Google</button>
-      <button class="rd-pp" onclick="rdPlat('DeepLearning.AI',this)"><span class="rd-dot" style="background:#e23b40"></span>DeepLearning.AI</button>
-      <button class="rd-pp" onclick="rdPlat('Coursera',this)"><span class="rd-dot" style="background:#0056d2"></span>Coursera</button>
-      <button class="rd-pp" onclick="rdPlat('edX',this)"><span class="rd-dot" style="background:#02262b"></span>edX</button>
-      <button class="rd-pp" onclick="rdPlat('freeCodeCamp',this)"><span class="rd-dot" style="background:#006400"></span>freeCodeCamp</button>
-      <button class="rd-pp" onclick="rdPlat('Microsoft Learn',this)"><span class="rd-dot" style="background:#00a4ef"></span>Microsoft</button>
-      <button class="rd-pp" onclick="rdPlat('AWS Training',this)"><span class="rd-dot" style="background:#ff9900"></span>AWS</button>
-      <button class="rd-pp" onclick="rdPlat('Cisco',this)"><span class="rd-dot" style="background:#1ba0d7"></span>Cisco</button>
-      <button class="rd-pp" onclick="rdPlat('Khan Academy',this)"><span class="rd-dot" style="background:#1b9e1b"></span>Khan Academy</button>
-      <button class="rd-pp" onclick="rdPlat('Udemy',this)"><span class="rd-dot" style="background:#a435f0"></span>Udemy</button>
-      <button class="rd-pp" onclick="rdPlat('Canva',this)"><span class="rd-dot" style="background:#7b2ff7"></span>Canva</button>
-      <button class="rd-pp" onclick="rdPlat('Figma',this)"><span class="rd-dot" style="background:#f24e1e"></span>Figma</button>
-      <button class="rd-pp" onclick="rdPlat('University of Helsinki',this)"><span class="rd-dot" style="background:#003580"></span>Univ. Helsinki</button>
+      __PLATFORM_PILLS__
     </div>
   </div>
 
@@ -406,10 +394,7 @@
     <div class="rd-sel">
       <select id="rd-cat" onchange="rdRender()">
         <option value="">All Categories</option>
-                <option value="AI & ML">🤖 AI & ML</option>
-        <option value="Business & Data">📊 Business & Data</option>
-        <option value="Design">🎨 Design</option>
-        <option value="Programming">💻 Programming</option>
+        __CATEGORY_OPTIONS__
       </select>
     </div>
     <div class="rd-sel">
