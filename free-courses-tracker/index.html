@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Tech Courses Tracker 2026 — Rooted Dreams</title>
+<meta name="description" content="Browse the latest free and discounted online courses from Google, Anthropic, Coursera, freeCodeCamp, edX, Microsoft and more. Refreshed live on every visit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/*
+  ══════════════════════════════════════════════════════
+  ROOTED DREAMS — BRAND PALETTE
+  Forest green  #2c5f2e   (hero / nav)
+  Mid green     #4a9e4f   (CTAs / accents)
+  Light green   #e8f5e9   (tag backgrounds)
+  Ink           #1a1a1a   (headings)
+  Body          #3b3b3b
+  Muted         #6b7280
+  Border        #e5e7eb
+  Warm bg       #f9fafb
+  ══════════════════════════════════════════════════════
+*/
+:root {
+  --g900: #1b4d1d;
+  --g700: #2c5f2e;
+  --g500: #4a9e4f;
+  --g300: #81c784;
+  --g100: #e8f5e9;
+  --g50:  #f1f8f1;
+
+  --ink:    #1a1a1a;
+  --ink2:   #3b3b3b;
+  --ink3:   #6b7280;
+  --ink4:   #9ca3af;
+
+  --bg:     #ffffff;
+  --bgwarm: #f9fafb;
+  --border: #e5e7eb;
+
+  --red:    #dc2626;
+  --red100: #fee2e2;
+  --amb:    #d97706;
+  --amb100: #fef3c7;
+  --blu:    #2563eb;
+  --blu100: #dbeafe;
+  --pur:    #7c3aed;
+  --pur100: #ede9fe;
+  --sky:    #0284c7;
+  --sky100: #e0f2fe;
+
+  --fh: 'Lora', Georgia, serif;
+  --fb: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --r:  10px;
+  --rl: 14px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);font-size:15px;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* ── BANNER ─────────────────────────────── */
+.banner{background:var(--g900);color:rgba(255,255,255,.85);text-align:center;font-size:12.5px;padding:8px 16px;letter-spacing:.02em}
+.banner a{color:#b9f6ca;font-weight:600;text-decoration:none}
+.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4ade80;margin-right:5px;animation:blink 1.8s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ── HERO ───────────────────────────────── */
+.hero{background:var(--g700);color:#fff;padding:52px 20px 48px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 15% 85%,rgba(255,255,255,.04) 0%,transparent 45%),
+             radial-gradient(circle at 85% 15%,rgba(74,158,79,.2) 0%,transparent 50%);
+  pointer-events:none}
+.hero::after{content:'';position:absolute;top:0;right:0;width:320px;height:320px;
+  background-image:radial-gradient(rgba(255,255,255,.06) 1.5px,transparent 1.5px);
+  background-size:20px 20px;pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#b9f6ca;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 16px;border-radius:99px;margin-bottom:20px}
+.hero h1{font-family:var(--fh);font-size:clamp(26px,5vw,50px);font-weight:700;line-height:1.15;margin-bottom:14px;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:#a5d6a7}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.75);max-width:520px;margin:0 auto 32px;line-height:1.65}
+
+/* refresh status */
+.refresh-status{display:inline-flex;align-items:center;gap:8px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.12);border-radius:99px;padding:7px 18px;font-size:12.5px;color:rgba(255,255,255,.7);margin-bottom:28px}
+.refresh-status.loading{color:#fbbf24}
+.refresh-status.done{color:#86efac}
+.refresh-status.error{color:#fca5a5}
+
+.hero-stats{display:inline-flex;background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.12);border-radius:var(--rl);overflow:hidden}
+.st{padding:13px 26px;text-align:center;border-right:1px solid rgba(255,255,255,.1)}
+.st:last-child{border-right:none}
+.st-n{font-family:var(--fh);font-size:22px;font-weight:700;color:#b9f6ca;display:block;line-height:1.2}
+.st-l{font-size:10px;color:rgba(255,255,255,.55);letter-spacing:.07em;text-transform:uppercase;margin-top:2px}
+
+/* ── PLATFORM PILLS ─────────────────────── */
+.plat-bar{background:var(--bg);border-bottom:1px solid var(--border);padding:13px 20px;overflow-x:auto;scrollbar-width:none}
+.plat-bar::-webkit-scrollbar{display:none}
+.plat-inner{display:flex;gap:7px;width:max-content;margin:0 auto}
+.pp{display:inline-flex;align-items:center;gap:5px;background:var(--bgwarm);border:1.5px solid var(--border);color:var(--ink3);font-family:var(--fb);font-size:12px;font-weight:600;padding:5px 13px;border-radius:99px;cursor:pointer;transition:all .15s;white-space:nowrap}
+.pp:hover{border-color:var(--g500);color:var(--g700);background:var(--g50)}
+.pp.on{background:var(--g700);border-color:var(--g700);color:#fff}
+.pp-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+/* ── FILTER BAR ─────────────────────────── */
+.fbar{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.05);padding:11px 20px}
+.finner{max-width:1200px;margin:0 auto;display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.swrap{position:relative;flex:1;min-width:200px}
+.swrap svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--ink4);pointer-events:none}
+#search{width:100%;padding:9px 13px 9px 36px;background:var(--bgwarm);border:1.5px solid var(--border);border-radius:var(--r);font-family:var(--fb);font-size:14px;color:var(--ink);outline:none;transition:border-color .15s}
+#search:focus{border-color:var(--g500);background:var(--bg)}
+#search::placeholder{color:var(--ink4)}
+.selw select{appearance:none;background:var(--bgwarm);border:1.5px solid var(--border);border-radius:var(--r);font-family:var(--fb);font-size:13px;color:var(--ink2);padding:9px 30px 9px 11px;cursor:pointer;outline:none;transition:border-color .15s;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='%236b7280' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;background-color:var(--bgwarm)}
+.selw select:focus{border-color:var(--g500)}
+.rcount{font-size:13px;color:var(--ink3);white-space:nowrap;margin-left:auto;font-weight:500}
+.rcount b{color:var(--g700)}
+
+/* ── SORT CHIPS ─────────────────────────── */
+.schips{max-width:1200px;margin:18px auto 0;padding:0 20px;display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.slbl{font-size:11.5px;font-weight:700;color:var(--ink4);letter-spacing:.05em;text-transform:uppercase;margin-right:3px}
+.sc{background:none;border:1.5px solid var(--border);color:var(--ink3);font-family:var(--fb);font-size:12.5px;font-weight:600;padding:5px 13px;border-radius:99px;cursor:pointer;transition:all .15s}
+.sc:hover{border-color:var(--g500);color:var(--g700)}
+.sc.on{background:var(--g700);border-color:var(--g700);color:#fff}
+
+/* ── GRID ────────────────────────────────── */
+.gouter{max-width:1200px;margin:22px auto 56px;padding:0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(315px,1fr));gap:18px}
+
+/* ── CARD ────────────────────────────────── */
+.card{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--rl);padding:20px;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s,border-color .2s,transform .2s;animation:up .32s ease both;cursor:default}
+.card:hover{box-shadow:0 8px 28px rgba(0,0,0,.1);border-color:var(--g300);transform:translateY(-2px)}
+@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+.ctop{display:flex;justify-content:space-between;align-items:flex-start;gap:7px}
+
+/* platform chips */
+.plbl{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:6px;border:1.5px solid;white-space:nowrap}
+.p-coursera{color:#0056d2;border-color:#c5deff;background:#f0f6ff}
+.p-udemy{color:#7b2de8;border-color:#ddd0fc;background:#f7f0ff}
+.p-edx{color:#026d77;border-color:#b2dfe6;background:#edf9fb}
+.p-google{color:#1a73e8;border-color:#c6dcff;background:#eef4ff}
+.p-dl{color:#b91c1c;border-color:#fecaca;background:#fff5f5}
+.p-fcc{color:#166534;border-color:#bbf7d0;background:#f0fdf4}
+.p-cisco{color:#0369a1;border-color:#bae6fd;background:#f0f9ff}
+.p-khan{color:#15803d;border-color:#bbf7d0;background:#f0fdf4}
+.p-ms{color:#0078d4;border-color:#bfdfff;background:#eff6ff}
+.p-aws{color:#c27803;border-color:#fde68a;background:#fffbeb}
+.p-canva{color:#6d28d9;border-color:#ddd6fe;background:#f5f3ff}
+.p-figma{color:#c2410c;border-color:#fed7aa;background:#fff7ed}
+.p-uh{color:#1e3a8a;border-color:#bfdbfe;background:#eff6ff}
+.p-odin{color:#166534;border-color:#bbf7d0;background:#f0fdf4}
+.p-scrimba{color:#7c3aed;border-color:#c4b5fd;background:#f5f3ff}
+.p-default{color:var(--ink3);border-color:var(--border);background:var(--bgwarm)}
+
+/* badges */
+.bdg{font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px;border:1.5px solid;white-space:nowrap;flex-shrink:0}
+.b-free{color:var(--g700);border-color:var(--g300);background:var(--g100)}
+.b-cert{color:var(--amb);border-color:#fcd34d;background:var(--amb100)}
+.b-hot{color:var(--red);border-color:#fca5a5;background:var(--red100)}
+.b-new{color:var(--blu);border-color:#93c5fd;background:var(--blu100)}
+.b-disc{color:var(--pur);border-color:#c4b5fd;background:var(--pur100)}
+.b-harvard{color:#9b1c1c;border-color:#fca5a5;background:#fff0f0}
+.b-ms{color:#0078d4;border-color:#bfdfff;background:#eff6ff}
+.b-aws{color:var(--amb);border-color:#fcd34d;background:var(--amb100)}
+.b-brand{color:var(--sky);border-color:#7dd3fc;background:var(--sky100)}
+.b-shield{color:var(--sky);border-color:#7dd3fc;background:var(--sky100)}
+.b-os{color:var(--g700);border-color:var(--g300);background:var(--g100)}
+
+.ctitle{font-family:var(--fh);font-size:15.5px;font-weight:600;line-height:1.4;color:var(--ink)}
+.ctags{display:flex;gap:5px;flex-wrap:wrap}
+.tag{font-size:11px;font-weight:600;padding:2px 9px;border-radius:99px;background:var(--bgwarm);border:1px solid var(--border);color:var(--ink3)}
+.tag-cat{background:var(--g50);border-color:#c3e6c5;color:var(--g700)}
+.cmeta{display:flex;gap:12px;font-size:12px;color:var(--ink3);flex-wrap:wrap}
+.cdesc{font-size:13.5px;color:var(--ink2);line-height:1.58;flex:1}
+.prow{display:flex;align-items:center;justify-content:space-between;gap:6px;padding-top:4px;border-top:1px solid var(--border)}
+.pg{display:flex;align-items:baseline;gap:7px}
+.pfree{font-family:var(--fh);font-size:18px;font-weight:700;color:var(--g700)}
+.ptrial{font-family:var(--fh);font-size:16px;font-weight:700;color:var(--g500)}
+.ppaid{font-family:var(--fh);font-size:18px;font-weight:700;color:var(--red)}
+.pwas{font-size:12px;color:var(--ink4);text-decoration:line-through}
+.exp{font-size:11px;font-weight:700;color:var(--red);background:var(--red100);border:1px solid #fca5a5;padding:2px 9px;border-radius:99px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+
+.ebtn{display:flex;align-items:center;justify-content:center;gap:5px;text-decoration:none;font-family:var(--fb);font-size:14px;font-weight:700;padding:11px 16px;border-radius:var(--r);transition:filter .15s,transform .15s;letter-spacing:.01em;margin-top:2px}
+.ebtn:hover{filter:brightness(1.08);transform:scale(1.01)}
+.btn-free{background:linear-gradient(135deg,var(--g900),var(--g500));color:#fff}
+.btn-trial{background:linear-gradient(135deg,var(--g700),var(--g300));color:#fff}
+.btn-paid{background:linear-gradient(135deg,#92400e,var(--amb));color:#fff}
+
+/* ── EMPTY / LOADING ─────────────────────── */
+.empty{grid-column:1/-1;text-align:center;padding:72px 20px}
+.empty-ico{font-size:48px;margin-bottom:14px}
+.empty h3{font-family:var(--fh);font-size:20px;color:var(--ink);margin-bottom:8px}
+.empty p{font-size:14px;color:var(--ink3)}
+
+/* ── RIBBON ──────────────────────────────── */
+.ribbon{background:var(--g50);border-top:1px solid #c3e6c5;border-bottom:1px solid #c3e6c5;padding:13px 20px;text-align:center;font-size:12.5px;color:var(--ink3);line-height:1.8}
+.ribbon strong{color:var(--g700)}
+.ribbon-badge{display:inline-flex;align-items:center;gap:5px;background:var(--amb100);border:1px solid #fcd34d;color:#92400e;font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;margin-top:6px}
+
+/* ── FOOTER ──────────────────────────────── */
+.footer{background:var(--bgwarm);border-top:1px solid var(--border);padding:26px 20px;text-align:center;font-size:13px;color:var(--ink3)}
+.footer a{color:var(--g700);font-weight:600;text-decoration:none}
+.footer a:hover{text-decoration:underline}
+.flogo{font-family:var(--fh);font-size:16px;font-weight:700;color:var(--g700);margin-bottom:5px}
+.ftag{font-size:11.5px;color:var(--ink4);letter-spacing:.05em;text-transform:uppercase;margin-bottom:11px}
+
+/* ── RESPONSIVE ──────────────────────────── */
+@media(max-width:660px){
+  .hero{padding:38px 16px 32px}
+  .hero-stats{flex-direction:column;border-radius:var(--r)}
+  .st{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:10px 20px}
+  .st:last-child{border-bottom:none}
+  .finner{flex-direction:column}
+  .swrap{min-width:100%}
+  .selw select,.selw{width:100%}
+  .rcount{margin-left:0}
+  .grid{grid-template-columns:1fr}
+  .gouter{padding:0 12px}
+}
+</style>
+</head>
+<body>
+
+<!-- BANNER -->
+<div class="banner">
+  <span class="live-dot"></span>Data refreshes live on every visit &nbsp;·&nbsp;
+  Part of <a href="https://www.rooteddreams.net/tools">Rooted Dreams Tools</a>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">🌱 Updated Daily · 2026</div>
+    <h1>Free &amp; Discounted<br><em>Tech Courses Tracker</em></h1>
+    <p class="hero-sub">The best free courses from Google, Anthropic, Coursera, freeCodeCamp, edX, Microsoft, AWS and more — refreshed live every time you visit.</p>
+
+    <!-- live refresh indicator -->
+    <div class="refresh-status loading" id="rstatus">
+      ⏳ Loading latest courses…
+    </div>
+
+    <div class="hero-stats">
+      <div class="st"><span class="st-n" id="s-total">—</span><span class="st-l">Courses</span></div>
+      <div class="st"><span class="st-n" id="s-free">—</span><span class="st-l">Free</span></div>
+      <div class="st"><span class="st-n" id="s-plat">13</span><span class="st-l">Platforms</span></div>
+      <div class="st"><span class="st-n" id="s-updated">Live</span><span class="st-l">Refresh</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- PLATFORM PILLS -->
+<nav class="plat-bar">
+  <div class="plat-inner" id="plat-bar">
+    <button class="pp on"  data-p="" onclick="setPlat('',this)">All Platforms</button>
+    <button class="pp" data-p="Google"       onclick="setPlat('Google',this)"><span class="pp-dot" style="background:#4285f4"></span>Google</button>
+    <button class="pp" data-p="DeepLearning.AI" onclick="setPlat('DeepLearning.AI',this)"><span class="pp-dot" style="background:#e23b40"></span>DeepLearning.AI</button>
+    <button class="pp" data-p="Coursera"     onclick="setPlat('Coursera',this)"><span class="pp-dot" style="background:#0056d2"></span>Coursera</button>
+    <button class="pp" data-p="edX"          onclick="setPlat('edX',this)"><span class="pp-dot" style="background:#02262b"></span>edX</button>
+    <button class="pp" data-p="freeCodeCamp" onclick="setPlat('freeCodeCamp',this)"><span class="pp-dot" style="background:#006400"></span>freeCodeCamp</button>
+    <button class="pp" data-p="Microsoft Learn" onclick="setPlat('Microsoft Learn',this)"><span class="pp-dot" style="background:#00a4ef"></span>Microsoft</button>
+    <button class="pp" data-p="AWS Training" onclick="setPlat('AWS Training',this)"><span class="pp-dot" style="background:#ff9900"></span>AWS</button>
+    <button class="pp" data-p="Cisco"        onclick="setPlat('Cisco',this)"><span class="pp-dot" style="background:#1ba0d7"></span>Cisco</button>
+    <button class="pp" data-p="Khan Academy" onclick="setPlat('Khan Academy',this)"><span class="pp-dot" style="background:#1b9e1b"></span>Khan Academy</button>
+    <button class="pp" data-p="Udemy"        onclick="setPlat('Udemy',this)"><span class="pp-dot" style="background:#a435f0"></span>Udemy</button>
+    <button class="pp" data-p="Canva"        onclick="setPlat('Canva',this)"><span class="pp-dot" style="background:#7b2ff7"></span>Canva</button>
+    <button class="pp" data-p="Figma"        onclick="setPlat('Figma',this)"><span class="pp-dot" style="background:#f24e1e"></span>Figma</button>
+  </div>
+</nav>
+
+<!-- FILTER BAR -->
+<div class="fbar">
+  <div class="finner">
+    <div class="swrap">
+      <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+        <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+      </svg>
+      <input type="text" id="search" placeholder="Search courses, topics, platforms…" oninput="render()" autocomplete="off">
+    </div>
+    <div class="selw">
+      <select id="f-cat" onchange="render()">
+        <option value="">All Categories</option>
+        <option value="Programming">💻 Programming</option>
+        <option value="AI &amp; ML">🤖 AI &amp; ML</option>
+        <option value="Design">🎨 Design</option>
+        <option value="Business &amp; Data">📊 Business &amp; Data</option>
+      </select>
+    </div>
+    <div class="selw">
+      <select id="f-level" onchange="render()">
+        <option value="">All Levels</option>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+      </select>
+    </div>
+    <div class="selw">
+      <select id="f-price" onchange="render()">
+        <option value="">All Prices</option>
+        <option value="free">🆓 Free Only</option>
+        <option value="trial">🔓 Free Trial</option>
+        <option value="paid">💸 Discounted</option>
+      </select>
+    </div>
+    <div class="rcount"><b id="cnt">—</b> courses</div>
+  </div>
+</div>
+
+<!-- SORT CHIPS -->
+<div class="schips">
+  <span class="slbl">Show:</span>
+  <button class="sc on" onclick="setSort('all',this)">All</button>
+  <button class="sc"    onclick="setSort('free',this)">🆓 100% Free</button>
+  <button class="sc"    onclick="setSort('cert',this)">🏆 Certificates</button>
+  <button class="sc"    onclick="setSort('ai',this)">🤖 AI &amp; ML</button>
+  <button class="sc"    onclick="setSort('new',this)">⚡ New</button>
+  <button class="sc"    onclick="setSort('top',this)">⭐ Top Rated</button>
+  <button class="sc"    onclick="setSort('expiring',this)">⏰ Expiring</button>
+</div>
+
+<!-- GRID -->
+<div class="gouter">
+  <div class="grid" id="grid">
+    <div class="empty"><div class="empty-ico">⏳</div><h3>Loading courses…</h3><p>Fetching the latest data</p></div>
+  </div>
+</div>
+
+<!-- RIBBON -->
+<div class="ribbon">
+  Sources: <strong>Google · Anthropic / DeepLearning.AI · Coursera · edX · freeCodeCamp · Microsoft Learn · AWS · Cisco · Khan Academy · Udemy · Canva · Figma · University of Helsinki · The Odin Project</strong><br>
+  Some links are affiliate links — at no extra cost to you, they support Rooted Dreams.<br>
+  <span class="ribbon-badge">🔄 Data refreshes live on every page visit — always current</span>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="flogo">🌱 Rooted Dreams</div>
+  <div class="ftag">Where Growth Meets Purpose</div>
+  <p>
+      <a href="https://www.rooteddreams.net">Home</a> &nbsp;·&nbsp;
+    <a href="https://www.rooteddreams.net/tools">All Tools</a> &nbsp;·&nbsp;
+    <a href="https://www.rooteddreams.net/contact">Contact</a>
+  </p>
+  <p style="margin-top:9px;font-size:12px">
+    © 2026 Rooted Dreams · Updated daily via GitHub Actions · No LLM costs
+  </p>
+</footer>
+
+<script>
+// ══════════════════════════════════════════════════════════
+//  CONFIGURATION — update YOUR_USERNAME after pushing to GitHub
+// ══════════════════════════════════════════════════════════
+const DATA_URL = 'https://raw.githubusercontent.com/RootedDreamsBlog/free-courses-tracker/main/data/courses.json';
+
+// Cache bust: appends today's date so visitors always get today's data
+// but the same visitor won't re-fetch mid-session
+const CACHE_KEY = 'rd_courses_' + new Date().toISOString().slice(0, 10);
+
+let ALL = [];
+let activePlat = '';
+let activeSort = 'all';
+
+// ── BOOT ─────────────────────────────────────────────────
+async function boot() {
+  setStatus('loading', '⏳ Fetching latest courses…');
+
+  // Try sessionStorage cache first (avoid hammering GitHub on every tab switch)
+  const cached = sessionStorage.getItem(CACHE_KEY);
+  if (cached) {
+    try {
+      ALL = JSON.parse(cached);
+      setStatus('done', `✅ ${ALL.length} courses loaded (cached today)`);
+      updateStats();
+      render();
+      return;
+    } catch { /* fall through to live fetch */ }
+  }
+
+  // Live fetch from GitHub raw
+  try {
+    const res = await fetch(DATA_URL + '?t=' + Date.now()); // cache-bust query
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    ALL = await res.json();
+    sessionStorage.setItem(CACHE_KEY, JSON.stringify(ALL));
+    setStatus('done', `✅ ${ALL.length} courses — refreshed just now`);
+    updateStats();
+    render();
+  } catch (err) {
+    setStatus('error', '⚠️ Could not load courses — check DATA_URL in the script');
+    document.getElementById('grid').innerHTML = `
+      <div class="empty">
+        <div class="empty-ico">⚠️</div>
+        <h3>Couldn't load course data</h3>
+        <p>Make sure the DATA_URL in the script points to your GitHub raw file,<br>
+        and that your repository is <strong>public</strong>.</p>
+      </div>`;
+  }
+}
+
+function setStatus(type, msg) {
+  const el = document.getElementById('rstatus');
+  el.textContent = msg;
+  el.className = 'refresh-status ' + type;
+}
+
+function updateStats() {
+  document.getElementById('s-total').textContent = ALL.length + '+';
+  document.getElementById('s-free').textContent  = ALL.filter(c => c.price?.toLowerCase() === 'free').length + '+';
+
+  // Show last update date if scraped_at is present
+  const latest = ALL.filter(c => c.scraped_at).sort((a, b) => b.scraped_at.localeCompare(a.scraped_at))[0];
+  if (latest?.scraped_at) {
+    const d = new Date(latest.scraped_at);
+    document.getElementById('s-updated').textContent = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  }
+}
+
+// ── CONTROLS ─────────────────────────────────────────────
+function setPlat(p, btn) {
+  activePlat = p;
+  document.querySelectorAll('.pp').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  render();
+}
+
+function setSort(s, btn) {
+  activeSort = s;
+  document.querySelectorAll('.sc').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  render();
+}
+
+// ── FILTER ───────────────────────────────────────────────
+function filtered() {
+  const q   = document.getElementById('search').value.toLowerCase().trim();
+  const cat = document.getElementById('f-cat').value;
+  const lvl = document.getElementById('f-level').value;
+  const prc = document.getElementById('f-price').value;
+
+  return ALL.filter(c => {
+    const p = (c.price || '').toLowerCase();
+    if (q && ![c.title, c.platform, c.description, c.category].some(f => f?.toLowerCase().includes(q))) return false;
+    if (cat && c.category !== cat) return false;
+    if (lvl && c.level !== lvl) return false;
+    if (activePlat && c.platform !== activePlat) return false;
+    if (prc === 'free'  && p !== 'free') return false;
+    if (prc === 'trial' && p !== 'free trial') return false;
+    if (prc === 'paid'  && (p === 'free' || p === 'free trial')) return false;
+
+    if (activeSort === 'free'    && p !== 'free') return false;
+    if (activeSort === 'cert'    && !c.badge?.toLowerCase().match(/cert|harvard|university|microsoft|google/)) return false;
+    if (activeSort === 'ai'      && c.category !== 'AI & ML') return false;
+    if (activeSort === 'new'     && !c.badge?.includes('New') && !c.badge?.includes('⚡')) return false;
+    if (activeSort === 'top'     && (c.rating || 0) < 4.8) return false;
+    if (activeSort === 'expiring'&& !c.expires) return false;
+    return true;
+  });
+}
+
+// ── RENDER ────────────────────────────────────────────────
+function platClass(p) {
+  const m = {
+    'Google':'p-google','DeepLearning.AI':'p-dl','Coursera':'p-coursera',
+    'Udemy':'p-udemy','edX':'p-edx','freeCodeCamp':'p-fcc','Cisco':'p-cisco',
+    'Khan Academy':'p-khan','Microsoft Learn':'p-ms','AWS Training':'p-aws',
+    'Canva':'p-canva','Figma':'p-figma','University of Helsinki':'p-uh',
+    'The Odin Project':'p-odin','Scrimba':'p-scrimba'
+  };
+  return m[p] || 'p-default';
+}
+
+function badgeClass(b) {
+  if (!b) return 'b-brand';
+  const s = b.toLowerCase();
+  if (s.includes('popular') || s.includes('hot')) return 'b-hot';
+  if (s.includes('certif'))  return 'b-cert';
+  if (s.includes('harvard')) return 'b-harvard';
+  if (s.includes('univers')) return 'b-cert';
+  if (s.includes('%'))       return 'b-disc';
+  if (s.includes('new') || s.includes('⚡')) return 'b-new';
+  if (s.includes('free') && !s.includes('trial')) return 'b-free';
+  if (s.includes('microsoft') || s.includes('🏢')) return 'b-ms';
+  if (s.includes('aws') || s.includes('☁️')) return 'b-aws';
+  if (s.includes('cisco') || s.includes('shield') || s.includes('🛡')) return 'b-shield';
+  if (s.includes('open source')) return 'b-os';
+  return 'b-brand';
+}
+
+function priceHTML(c) {
+  const p = (c.price || '').toLowerCase();
+  if (p === 'free')
+    return `<span class="pfree">FREE</span>`;
+  if (p === 'free trial')
+    return `<div class="pg"><span class="ptrial">Free Trial</span><span class="pwas">then ${c.original_price}</span></div>`;
+  return `<div class="pg"><span class="ppaid">${c.price}</span><span class="pwas">${c.original_price}</span></div>`;
+}
+
+function expiryHTML(d) {
+  if (!d) return '';
+  const days = Math.ceil((new Date(d) - new Date()) / 86400000);
+  return (days > 0 && days <= 7) ? `<span class="exp">⏰ ${days}d left</span>` : '';
+}
+
+function btnCfg(c) {
+  const p = (c.price || '').toLowerCase();
+  if (p === 'free')       return { cls: 'btn-free',  lbl: '🎓 Enroll Free →' };
+  if (p === 'free trial') return { cls: 'btn-trial', lbl: '▶ Start Free Trial →' };
+  return { cls: 'btn-paid', lbl: '⚡ Get This Deal →' };
+}
+
+function render() {
+  const list = filtered();
+  document.getElementById('cnt').textContent = list.length;
+  const grid = document.getElementById('grid');
+
+  if (!list.length) {
+    grid.innerHTML = `<div class="empty"><div class="empty-ico">🔍</div><h3>No courses found</h3><p>Try different filters or clear your search.</p></div>`;
+    return;
+  }
+
+  grid.innerHTML = list.map((c, i) => {
+    const btn = btnCfg(c);
+    return `
+    <article class="card" style="animation-delay:${Math.min(i * 0.035, 0.38)}s">
+      <div class="ctop">
+        <span class="plbl ${platClass(c.platform)}">${c.platform}</span>
+        <span class="bdg ${badgeClass(c.badge)}">${c.badge || '🆓 Free'}</span>
+      </div>
+      <h2 class="ctitle">${c.title}</h2>
+      <div class="ctags">
+        <span class="tag tag-cat">${c.category}</span>
+        <span class="tag">${c.level}</span>
+      </div>
+      <div class="cmeta">
+        <span>⭐ ${c.rating}</span>
+        <span>👥 ${c.students}</span>
+        <span>🕐 ${c.duration}</span>
+      </div>
+      <p class="cdesc">${c.description}</p>
+      <div class="prow">
+        ${priceHTML(c)}
+        ${expiryHTML(c.expires)}
+      </div>
+      <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="ebtn ${btn.cls}">${btn.lbl}</a>
+    </article>`;
+  }).join('');
+}
+
+boot();
+</script>
+</body>
+</html>
