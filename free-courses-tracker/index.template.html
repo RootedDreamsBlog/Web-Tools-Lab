@@ -1,520 +1,537 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-.rd-tracker *,
-.rd-tracker *::before,
-.rd-tracker *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .rd-tracker *,
+        .rd-tracker *::before,
+        .rd-tracker *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-.rd-tracker {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 15px;
-  color: #1a1a1a;
-  width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
-  -webkit-font-smoothing: antialiased;
-}
+        .rd-tracker {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 15px;
+            color: #1a1a1a;
+            width: 100%;
+            max-width: 1180px;
+            margin: 0 auto;
+            -webkit-font-smoothing: antialiased;
+        }
 
-/* ── INTRO STRIP ─────────────────────────────────────── */
-.rd-intro {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 20px 0 18px;
-  border-bottom: 2px solid #e5e7eb;
-  margin-bottom: 20px;
-}
-.rd-intro-left h2 {
-  font-size: 22px;
-  font-weight: 700;
-  color: #1a1a1a;
-  letter-spacing: -.01em;
-}
-.rd-intro-left p {
-  font-size: 14px;
-  color: #6b7280;
-  margin-top: 4px;
-}
-.rd-stats {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.rd-stat {
-  text-align: center;
-  background: #f1f8f1;
-  border: 1px solid #c3e6c5;
-  border-radius: 10px;
-  padding: 10px 20px;
-  min-width: 80px;
-}
-.rd-stat-n {
-  font-size: 20px;
-  font-weight: 700;
-  color: #2c5f2e;
-  display: block;
-  line-height: 1.2;
-}
-.rd-stat-l {
-  font-size: 10.5px;
-  color: #6b7280;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-}
-.rd-updated {
-  font-size: 12px;
-  color: #9ca3af;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 99px;
-  padding: 4px 12px;
-  align-self: center;
-}
-.rd-updated span { color: #2c5f2e; font-weight: 600; }
+        /* ── INTRO STRIP ─────────────────────────────────────── */
+        .rd-intro {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 20px 0 18px;
+            border-bottom: 2px solid #e5e7eb;
+            margin-bottom: 20px;
+        }
+        .rd-intro-left h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -.01em;
+        }
+        .rd-intro-left p {
+            font-size: 14px;
+            color: #6b7280;
+            margin-top: 4px;
+        }
+        .rd-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .rd-stat {
+            text-align: center;
+            background: #f1f8f1;
+            border: 1px solid #c3e6c5;
+            border-radius: 10px;
+            padding: 10px 20px;
+            min-width: 80px;
+        }
+        .rd-stat-n {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c5f2e;
+            display: block;
+            line-height: 1.2;
+        }
+        .rd-stat-l {
+            font-size: 10.5px;
+            color: #6b7280;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+        }
+        .rd-updated {
+            font-size: 12px;
+            color: #9ca3af;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 99px;
+            padding: 4px 12px;
+            align-self: center;
+        }
+        .rd-updated span { color: #2c5f2e; font-weight: 600; }
 
-/* ── PLATFORM PILLS ──────────────────────────────────── */
-.rd-plat-wrap {
-  overflow-x: auto;
-  scrollbar-width: none;
-  margin-bottom: 16px;
-  padding-bottom: 2px;
-}
-.rd-plat-wrap::-webkit-scrollbar { display: none; }
-.rd-plat-inner {
-  display: flex;
-  gap: 6px;
-  width: max-content;
-}
-.rd-pp {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: #f9fafb;
-  border: 1.5px solid #e5e7eb;
-  color: #6b7280;
-  font-family: inherit;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 5px 12px;
-  border-radius: 99px;
-  cursor: pointer;
-  transition: all .15s;
-  white-space: nowrap;
-}
-.rd-pp:hover { border-color: #4a9e4f; color: #2c5f2e; background: #f1f8f1; }
-.rd-pp.on    { background: #2c5f2e; border-color: #2c5f2e; color: #fff; }
-.rd-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+        /* ── PLATFORM PILLS ──────────────────────────────────── */
+        .rd-plat-wrap {
+            overflow-x: auto;
+            scrollbar-width: none;
+            margin-bottom: 16px;
+            padding-bottom: 2px;
+        }
+        .rd-plat-wrap::-webkit-scrollbar { display: none; }
+        .rd-plat-inner {
+            display: flex;
+            gap: 6px;
+            width: max-content;
+        }
+        .rd-pp {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: #f9fafb;
+            border: 1.5px solid #e5e7eb;
+            color: #6b7280;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 99px;
+            cursor: pointer;
+            transition: all .15s;
+            white-space: nowrap;
+        }
+        .rd-pp:hover { border-color: #4a9e4f; color: #2c5f2e; background: #f1f8f1; }
+        .rd-pp.on    { background: #2c5f2e; border-color: #2c5f2e; color: #fff; }
+        .rd-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
 
-/* ── FILTER BAR ──────────────────────────────────────── */
-.rd-filters {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 12px 14px;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-}
-.rd-search {
-  position: relative;
-  flex: 1;
-  min-width: 200px;
-}
-.rd-search svg {
-  position: absolute;
-  left: 11px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #9ca3af;
-  pointer-events: none;
-}
-.rd-search input {
-  width: 100%;
-  padding: 8px 12px 8px 34px;
-  background: #fff;
-  border: 1.5px solid #e5e7eb;
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: 13.5px;
-  color: #1a1a1a;
-  outline: none;
-  transition: border-color .15s;
-}
-.rd-search input:focus { border-color: #4a9e4f; }
-.rd-search input::placeholder { color: #9ca3af; }
-.rd-sel select {
-  appearance: none;
-  background: #fff;
-  border: 1.5px solid #e5e7eb;
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: 13px;
-  color: #3b3b3b;
-  padding: 8px 28px 8px 10px;
-  cursor: pointer;
-  outline: none;
-  transition: border-color .15s;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='%236b7280' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 9px center;
-  background-color: #fff;
-}
-.rd-sel select:focus { border-color: #4a9e4f; }
-.rd-count { font-size: 13px; color: #6b7280; margin-left: auto; white-space: nowrap; }
-.rd-count b { color: #2c5f2e; font-weight: 700; }
+        /* ── FILTER BAR ──────────────────────────────────────── */
+        .rd-filters {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 12px 14px;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+        }
+        .rd-search {
+            position: relative;
+            flex: 1;
+            min-width: 200px;
+        }
+        .rd-search svg {
+            position: absolute;
+            left: 11px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+            pointer-events: none;
+        }
+        .rd-search input {
+            width: 100%;
+            padding: 8px 12px 8px 34px;
+            background: #fff;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 13.5px;
+            color: #1a1a1a;
+            outline: none;
+            transition: border-color .15s;
+        }
+        .rd-search input:focus { border-color: #4a9e4f; }
+        .rd-search input::placeholder { color: #9ca3af; }
+        .rd-sel select {
+            appearance: none;
+            background: #fff;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 13px;
+            color: #3b3b3b;
+            padding: 8px 28px 8px 10px;
+            cursor: pointer;
+            outline: none;
+            transition: border-color .15s;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='%236b7280' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 9px center;
+            background-color: #fff;
+        }
+        .rd-sel select:focus { border-color: #4a9e4f; }
+        .rd-count { font-size: 13px; color: #6b7280; margin-left: auto; white-space: nowrap; }
+        .rd-count b { color: #2c5f2e; font-weight: 700; }
 
-/* ── SORT CHIPS ──────────────────────────────────────── */
-.rd-sorts {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-  align-items: center;
-}
-.rd-sort-lbl { font-size: 11.5px; font-weight: 700; color: #9ca3af; letter-spacing: .05em; text-transform: uppercase; margin-right: 4px; }
-.rd-sc {
-  background: none;
-  border: 1.5px solid #e5e7eb;
-  color: #6b7280;
-  font-family: inherit;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 5px 12px;
-  border-radius: 99px;
-  cursor: pointer;
-  transition: all .15s;
-}
-.rd-sc:hover { border-color: #4a9e4f; color: #2c5f2e; }
-.rd-sc.on    { background: #2c5f2e; border-color: #2c5f2e; color: #fff; }
+        /* ── SORT CHIPS ──────────────────────────────────────── */
+        .rd-sorts {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        .rd-sort-lbl { font-size: 11.5px; font-weight: 700; color: #9ca3af; letter-spacing: .05em; text-transform: uppercase; margin-right: 4px; }
+        .rd-sc {
+            background: none;
+            border: 1.5px solid #e5e7eb;
+            color: #6b7280;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 99px;
+            cursor: pointer;
+            transition: all .15s;
+        }
+        .rd-sc:hover { border-color: #4a9e4f; color: #2c5f2e; }
+        .rd-sc.on    { background: #2c5f2e; border-color: #2c5f2e; color: #fff; }
 
-/* ── GRID ────────────────────────────────────────────── */
-.rd-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;
-}
+        /* ── GRID ────────────────────────────────────────────── */
+        .rd-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+        }
 
-/* ── CARD ────────────────────────────────────────────── */
-.rd-card {
-  background: #fff;
-  border: 1.5px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 11px;
-  transition: box-shadow .2s, border-color .2s, transform .2s;
-  animation: rdUp .3s ease both;
-}
-.rd-card:hover {
-  box-shadow: 0 6px 24px rgba(0,0,0,.09);
-  border-color: #81c784;
-  transform: translateY(-2px);
-}
-@keyframes rdUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+        /* ── CARD ────────────────────────────────────────────── */
+        .rd-card {
+            background: #fff;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+            transition: box-shadow .2s, border-color .2s, transform .2s;
+            animation: rdUp .3s ease both;
+        }
+        .rd-card:hover {
+            box-shadow: 0 6px 24px rgba(0,0,0,.09);
+            border-color: #81c784;
+            transform: translateY(-2px);
+        }
+        @keyframes rdUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
 
-.rd-ctop { display: flex; justify-content: space-between; align-items: flex-start; gap: 7px; }
+        .rd-ctop { display: flex; justify-content: space-between; align-items: flex-start; gap: 7px; }
 
-/* platform labels */
-.rd-plbl {
-  font-size: 10.5px; font-weight: 700; letter-spacing: .06em;
-  text-transform: uppercase; padding: 3px 9px; border-radius: 6px;
-  border: 1.5px solid; white-space: nowrap;
-}
-.rp-google     { color: #1a73e8; border-color: #c6dcff; background: #eef4ff; }
-.rp-dl         { color: #b91c1c; border-color: #fecaca; background: #fff5f5; }
-.rp-coursera   { color: #0056d2; border-color: #c5deff; background: #f0f6ff; }
-.rp-udemy      { color: #7b2de8; border-color: #ddd0fc; background: #f7f0ff; }
-.rp-edx        { color: #026d77; border-color: #b2dfe6; background: #edf9fb; }
-.rp-fcc        { color: #166534; border-color: #bbf7d0; background: #f0fdf4; }
-.rp-cisco      { color: #0369a1; border-color: #bae6fd; background: #f0f9ff; }
-.rp-khan       { color: #15803d; border-color: #bbf7d0; background: #f0fdf4; }
-.rp-ms         { color: #0078d4; border-color: #bfdfff; background: #eff6ff; }
-.rp-aws        { color: #c27803; border-color: #fde68a; background: #fffbeb; }
-.rp-canva      { color: #6d28d9; border-color: #ddd6fe; background: #f5f3ff; }
-.rp-figma      { color: #c2410c; border-color: #fed7aa; background: #fff7ed; }
-.rp-odin       { color: #166534; border-color: #bbf7d0; background: #f0fdf4; }
-.rp-default    { color: #6b7280; border-color: #e5e7eb; background: #f9fafb; }
+        /* platform labels */
+        .rd-plbl {
+            font-size: 10.5px; font-weight: 700; letter-spacing: .06em;
+            text-transform: uppercase; padding: 3px 9px; border-radius: 6px;
+            border: 1.5px solid; white-space: nowrap;
+        }
+        .rp-google     { color: #1a73e8; border-color: #c6dcff; background: #eef4ff; }
+        .rp-dl         { color: #b91c1c; border-color: #fecaca; background: #fff5f5; }
+        .rp-coursera   { color: #0056d2; border-color: #c5deff; background: #f0f6ff; }
+        .rp-udemy      { color: #7b2de8; border-color: #ddd0fc; background: #f7f0ff; }
+        .rp-edx        { color: #026d77; border-color: #b2dfe6; background: #edf9fb; }
+        .rp-fcc        { color: #166534; border-color: #bbf7d0; background: #f0fdf4; }
+        .rp-cisco      { color: #0369a1; border-color: #bae6fd; background: #f0f9ff; }
+        .rp-khan       { color: #15803d; border-color: #bbf7d0; background: #f0fdf4; }
+        .rp-ms         { color: #0078d4; border-color: #bfdfff; background: #eff6ff; }
+        .rp-aws        { color: #c27803; border-color: #fde68a; background: #fffbeb; }
+        .rp-canva      { color: #6d28d9; border-color: #ddd6fe; background: #f5f3ff; }
+        .rp-figma      { color: #c2410c; border-color: #fed7aa; background: #fff7ed; }
+        .rp-odin       { color: #166534; border-color: #bbf7d0; background: #f0fdf4; }
+        .rp-default    { color: #6b7280; border-color: #e5e7eb; background: #f9fafb; }
 
-/* badges */
-.rd-bdg {
-  font-size: 10.5px; font-weight: 700; padding: 3px 9px;
-  border-radius: 6px; border: 1.5px solid; white-space: nowrap; flex-shrink: 0;
-}
-.rb-free   { color: #2c5f2e; border-color: #81c784; background: #e8f5e9; }
-.rb-cert   { color: #d97706; border-color: #fcd34d; background: #fef3c7; }
-.rb-hot    { color: #dc2626; border-color: #fca5a5; background: #fee2e2; }
-.rb-new    { color: #2563eb; border-color: #93c5fd; background: #dbeafe; }
-.rb-disc   { color: #7c3aed; border-color: #c4b5fd; background: #ede9fe; }
-.rb-brand  { color: #0284c7; border-color: #7dd3fc; background: #e0f2fe; }
-.rb-ms     { color: #0078d4; border-color: #bfdfff; background: #eff6ff; }
-.rb-aws    { color: #d97706; border-color: #fcd34d; background: #fef3c7; }
-.rb-shield { color: #0284c7; border-color: #7dd3fc; background: #e0f2fe; }
-.rb-os     { color: #2c5f2e; border-color: #81c784; background: #e8f5e9; }
-.rb-harvard{ color: #9b1c1c; border-color: #fca5a5; background: #fff0f0; }
+        /* badges */
+        .rd-bdg {
+            font-size: 10.5px; font-weight: 700; padding: 3px 9px;
+            border-radius: 6px; border: 1.5px solid; white-space: nowrap; flex-shrink: 0;
+        }
+        .rb-free   { color: #2c5f2e; border-color: #81c784; background: #e8f5e9; }
+        .rb-cert   { color: #d97706; border-color: #fcd34d; background: #fef3c7; }
+        .rb-hot    { color: #dc2626; border-color: #fca5a5; background: #fee2e2; }
+        .rb-new    { color: #2563eb; border-color: #93c5fd; background: #dbeafe; }
+        .rb-disc   { color: #7c3aed; border-color: #c4b5fd; background: #ede9fe; }
+        .rb-brand  { color: #0284c7; border-color: #7dd3fc; background: #e0f2fe; }
+        .rb-ms     { color: #0078d4; border-color: #bfdfff; background: #eff6ff; }
+        .rb-aws    { color: #d97706; border-color: #fcd34d; background: #fef3c7; }
+        .rb-shield { color: #0284c7; border-color: #7dd3fc; background: #e0f2fe; }
+        .rb-os     { color: #2c5f2e; border-color: #81c784; background: #e8f5e9; }
+        .rb-harvard{ color: #9b1c1c; border-color: #fca5a5; background: #fff0f0; }
 
-.rd-title { font-size: 15px; font-weight: 700; line-height: 1.4; color: #1a1a1a; }
+        .rd-title { font-size: 15px; font-weight: 700; line-height: 1.4; color: #1a1a1a; }
 
-.rd-tags { display: flex; gap: 5px; flex-wrap: wrap; }
-.rd-tag  { font-size: 11px; font-weight: 600; padding: 2px 9px; border-radius: 99px; background: #f9fafb; border: 1px solid #e5e7eb; color: #6b7280; }
-.rd-tag-cat { background: #f1f8f1; border-color: #c3e6c5; color: #2c5f2e; }
+        .rd-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+        .rd-tag  { font-size: 11px; font-weight: 600; padding: 2px 9px; border-radius: 99px; background: #f9fafb; border: 1px solid #e5e7eb; color: #6b7280; }
+        .rd-tag-cat { background: #f1f8f1; border-color: #c3e6c5; color: #2c5f2e; }
 
-.rd-meta { display: flex; gap: 12px; font-size: 12px; color: #6b7280; flex-wrap: wrap; }
-.rd-desc { font-size: 13px; color: #3b3b3b; line-height: 1.58; flex: 1; }
+        .rd-meta { display: flex; gap: 12px; font-size: 12px; color: #6b7280; flex-wrap: wrap; }
+        .rd-desc { font-size: 13px; color: #3b3b3b; line-height: 1.58; flex: 1; }
 
-.rd-prow {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 6px; padding-top: 4px; border-top: 1px solid #e5e7eb;
-}
-.rd-pg    { display: flex; align-items: baseline; gap: 7px; }
-.rd-pfree { font-size: 17px; font-weight: 700; color: #2c5f2e; }
-.rd-ptrial{ font-size: 15px; font-weight: 700; color: #4a9e4f; }
-.rd-ppaid { font-size: 17px; font-weight: 700; color: #dc2626; }
-.rd-pwas  { font-size: 12px; color: #9ca3af; text-decoration: line-through; }
-.rd-exp   {
-  font-size: 11px; font-weight: 700; color: #dc2626;
-  background: #fee2e2; border: 1px solid #fca5a5;
-  padding: 2px 9px; border-radius: 99px;
-  animation: rdPulse 2s infinite;
-}
-@keyframes rdPulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+        .rd-prow {
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 6px; padding-top: 4px; border-top: 1px solid #e5e7eb;
+        }
+        .rd-pg    { display: flex; align-items: baseline; gap: 7px; }
+        .rd-pfree { font-size: 17px; font-weight: 700; color: #2c5f2e; }
+        .rd-ptrial{ font-size: 15px; font-weight: 700; color: #4a9e4f; }
+        .rd-ppaid { font-size: 17px; font-weight: 700; color: #dc2626; }
+        .rd-pwas  { font-size: 12px; color: #9ca3af; text-decoration: line-through; }
+        .rd-exp   {
+            font-size: 11px; font-weight: 700; color: #dc2626;
+            background: #fee2e2; border: 1px solid #fca5a5;
+            padding: 2px 9px; border-radius: 99px;
+            animation: rdPulse 2s infinite;
+        }
+        @keyframes rdPulse { 0%,100%{opacity:1} 50%{opacity:.5} }
 
-.rd-btn {
-  display: flex; align-items: center; justify-content: center; gap: 5px;
-  text-decoration: none; font-family: inherit; font-size: 13.5px; font-weight: 700;
-  padding: 10px 16px; border-radius: 8px;
-  transition: filter .15s, transform .15s; margin-top: 2px;
-}
-.rd-btn:hover { filter: brightness(1.08); transform: scale(1.01); }
-.rb-btn-free  { background: linear-gradient(135deg, #1b4d1d, #4a9e4f); color: #fff; }
-.rb-btn-trial { background: linear-gradient(135deg, #2c5f2e, #81c784); color: #fff; }
-.rb-btn-paid  { background: linear-gradient(135deg, #92400e, #d97706); color: #fff; }
+        .rd-btn {
+            display: flex; align-items: center; justify-content: center; gap: 5px;
+            text-decoration: none; font-family: inherit; font-size: 13.5px; font-weight: 700;
+            padding: 10px 16px; border-radius: 8px;
+            transition: filter .15s, transform .15s; margin-top: 2px;
+        }
+        .rd-btn:hover { filter: brightness(1.08); transform: scale(1.01); }
+        .rb-btn-free  { background: linear-gradient(135deg, #1b4d1d, #4a9e4f); color: #fff; }
+        .rb-btn-trial { background: linear-gradient(135deg, #2c5f2e, #81c784); color: #fff; }
+        .rb-btn-paid  { background: linear-gradient(135deg, #92400e, #d97706); color: #fff; }
 
-/* ── EMPTY ───────────────────────────────────────────── */
-.rd-empty { grid-column: 1/-1; text-align: center; padding: 56px 20px; color: #6b7280; }
-.rd-empty-ico { font-size: 40px; margin-bottom: 12px; }
-.rd-empty h3  { font-size: 18px; color: #1a1a1a; margin-bottom: 6px; }
+        /* ── EMPTY ───────────────────────────────────────────── */
+        .rd-empty { grid-column: 1/-1; text-align: center; padding: 56px 20px; color: #6b7280; }
+        .rd-empty-ico { font-size: 40px; margin-bottom: 12px; }
+        .rd-empty h3  { font-size: 18px; color: #1a1a1a; margin-bottom: 6px; }
 
-/* ── FOOTER NOTE ─────────────────────────────────────── */
-.rd-footnote {
-  margin-top: 24px;
-  padding: 14px 16px;
-  background: #f1f8f1;
-  border: 1px solid #c3e6c5;
-  border-radius: 10px;
-  font-size: 12.5px;
-  color: #6b7280;
-  text-align: center;
-  line-height: 1.7;
-}
-.rd-footnote strong { color: #2c5f2e; }
+        /* ── FOOTER NOTE ─────────────────────────────────────── */
+        .rd-footnote {
+            margin-top: 24px;
+            padding: 14px 16px;
+            background: #f1f8f1;
+            border: 1px solid #c3e6c5;
+            border-radius: 10px;
+            font-size: 12.5px;
+            color: #6b7280;
+            text-align: center;
+            line-height: 1.7;
+        }
+        .rd-footnote strong { color: #2c5f2e; }
 
-/* ── RESPONSIVE ──────────────────────────────────────── */
-@media (max-width: 640px) {
-  .rd-intro   { flex-direction: column; align-items: flex-start; }
-  .rd-stats   { gap: 10px; }
-  .rd-filters { flex-direction: column; }
-  .rd-search  { min-width: 100%; }
-  .rd-sel select { width: 100%; }
-  .rd-count   { margin-left: 0; }
-  .rd-grid    { grid-template-columns: 1fr; }
-}
+        /* ── RESPONSIVE ──────────────────────────────────────── */
+        @media (max-width: 640px) {
+            .rd-intro   { flex-direction: column; align-items: flex-start; }
+            .rd-stats   { gap: 10px; }
+            .rd-filters { flex-direction: column; }
+            .rd-search  { min-width: 100%; }
+            .rd-sel select { width: 100%; }
+            .rd-count   { margin-left: 0; }
+            .rd-grid    { grid-template-columns: 1fr; }
+        }
 
-/* ── SKELETON LOADING CARDS ──────────────────────────── */
-.rd-skeleton { pointer-events: none; }
-.rd-skel-top, .rd-skel-title, .rd-skel-line, .rd-skel-btn {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: rdSkel 1.4s ease infinite;
-  border-radius: 6px;
-}
-.rd-skel-top   { height: 22px; width: 40%; margin-bottom: 4px; }
-.rd-skel-title { height: 18px; width: 85%; margin: 4px 0; }
-.rd-skel-line  { height: 14px; width: 70%; margin: 6px 0; }
-.rd-skel-short { width: 45%; }
-.rd-skel-btn   { height: 40px; width: 100%; margin-top: 8px; }
-@keyframes rdSkel {
-  0%   { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-</style>
+        /* ── SKELETON LOADING CARDS ──────────────────────────── */
+        .rd-skeleton { pointer-events: none; }
+        .rd-skel-top, .rd-skel-title, .rd-skel-line, .rd-skel-btn {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: rdSkel 1.4s ease infinite;
+            border-radius: 6px;
+        }
+        .rd-skel-top   { height: 22px; width: 40%; margin-bottom: 4px; }
+        .rd-skel-title { height: 18px; width: 85%; margin: 4px 0; }
+        .rd-skel-line  { height: 14px; width: 70%; margin: 6px 0; }
+        .rd-skel-short { width: 45%; }
+        .rd-skel-btn   { height: 40px; width: 100%; margin-top: 8px; }
+        @keyframes rdSkel {
+            0%   { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
 </head>
 <body>
 <div class="rd-tracker">
 
-  <!-- INTRO -->
-  <div class="rd-intro">
-      <div class="rd-intro-left">
-          <h1>Free &amp; Discounted Tech Courses Tracker</h1>
-          <p>Curated from <a href="https://www.google.com" target="_blank">Google</a>, <a href="https://www.coursera.org" target="_blank">Coursera</a>, <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a>, <a href="https://www.edx.org" target="_blank">edX</a>, <a href="https://www.microsoft.com" target="_blank">Microsoft</a>, <a href="https://www.aws.amacon.com" target="_blank">AWS</a> and more</p>
-      </div>
-    <div class="rd-stats">
-      <div class="rd-stat">
-        <span class="rd-stat-n" id="rd-total">—</span>
-        <span class="rd-stat-l">Courses</span>
-      </div>
-      <div class="rd-stat">
-        <span class="rd-stat-n" id="rd-free">—</span>
-        <span class="rd-stat-l">Free</span>
-      </div>
-      <div class="rd-stat">
-        <span class="rd-stat-n" id="rd-plat-count">—</span>
-        <span class="rd-stat-l">Platforms</span>
-      </div>
+    <!-- INTRO -->
+    <div class="rd-intro">
+        <div class="rd-intro-left">
+            <h1>Free &amp; Discounted Tech Courses Tracker</h1>
+            <p>Curated from <a href="https://www.google.com" target="_blank">Google</a>, <a href="https://www.coursera.org" target="_blank">Coursera</a>, <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a>, <a href="https://www.edx.org" target="_blank">edX</a>, <a href="https://www.microsoft.com" target="_blank">Microsoft</a>, <a href="https://www.aws.amacon.com" target="_blank">AWS</a> and more</p>
+        </div>
+        <div class="rd-stats">
+            <div class="rd-stat">
+                <span class="rd-stat-n" id="rd-total">—</span>
+                <span class="rd-stat-l">Courses</span>
+            </div>
+            <div class="rd-stat">
+                <span class="rd-stat-n" id="rd-free">—</span>
+                <span class="rd-stat-l">Free</span>
+            </div>
+            <div class="rd-stat">
+                <span class="rd-stat-n" id="rd-plat-count">—</span>
+                <span class="rd-stat-l">Platforms</span>
+            </div>
+        </div>
+        <div class="rd-updated">Updated <span id="rd-updated-date">—</span></div>
     </div>
-    <div class="rd-updated">Updated <span id="rd-updated-date">—</span></div>
-  </div>
 
-  <!-- PLATFORM PILLS -->
-  <div class="rd-plat-wrap">
-    <div class="rd-plat-inner">
-      <button class="rd-pp on" onclick="rdPlat('',this)">All</button>
-      __PLATFORM_PILLS__
+    <!-- PLATFORM PILLS -->
+    <div class="rd-plat-wrap">
+        <div class="rd-plat-inner">
+            <button class="rd-pp on" onclick="rdPlat('',this)">All</button>
+            <button class="rd-pp" onclick="rdPlat('Google',this)"><span class="rd-dot" style="background:#4285f4"></span>Google</button>
+            <button class="rd-pp" onclick="rdPlat('DeepLearning.AI',this)"><span class="rd-dot" style="background:#e23b40"></span>DeepLearning.AI</button>
+            <button class="rd-pp" onclick="rdPlat('Coursera',this)"><span class="rd-dot" style="background:#0056d2"></span>Coursera</button>
+            <button class="rd-pp" onclick="rdPlat('edX',this)"><span class="rd-dot" style="background:#02262b"></span>edX</button>
+            <button class="rd-pp" onclick="rdPlat('freeCodeCamp',this)"><span class="rd-dot" style="background:#006400"></span>freeCodeCamp</button>
+            <button class="rd-pp" onclick="rdPlat('Microsoft Learn',this)"><span class="rd-dot" style="background:#00a4ef"></span>Microsoft</button>
+            <button class="rd-pp" onclick="rdPlat('AWS Training',this)"><span class="rd-dot" style="background:#ff9900"></span>AWS</button>
+            <button class="rd-pp" onclick="rdPlat('Cisco',this)"><span class="rd-dot" style="background:#1ba0d7"></span>Cisco</button>
+            <button class="rd-pp" onclick="rdPlat('Khan Academy',this)"><span class="rd-dot" style="background:#1b9e1b"></span>Khan Academy</button>
+            <button class="rd-pp" onclick="rdPlat('Udemy',this)"><span class="rd-dot" style="background:#a435f0"></span>Udemy</button>
+            <button class="rd-pp" onclick="rdPlat('Canva',this)"><span class="rd-dot" style="background:#7b2ff7"></span>Canva</button>
+            <button class="rd-pp" onclick="rdPlat('Figma',this)"><span class="rd-dot" style="background:#f24e1e"></span>Figma</button>
+            <button class="rd-pp" onclick="rdPlat('University of Helsinki',this)"><span class="rd-dot" style="background:#003580"></span>Univ. Helsinki</button>
+        </div>
     </div>
-  </div>
 
-  <!-- FILTERS -->
-  <div class="rd-filters">
-    <div class="rd-search">
-      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
-        <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
-      </svg>
-      <input type="text" id="rd-search" placeholder="Search courses, topics, platforms…" oninput="rdRender()" autocomplete="off">
+    <!-- FILTERS -->
+    <div class="rd-filters">
+        <div class="rd-search">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <input type="text" id="rd-search" placeholder="Search courses, topics, platforms…" oninput="rdRender()" autocomplete="off">
+        </div>
+        <div class="rd-sel">
+            <select id="rd-cat" onchange="rdRender()">
+                <option value="">All Categories</option>
+                <option value="AI & ML">🤖 AI & ML</option>
+                <option value="Business & Data">📊 Business & Data</option>
+                <option value="Design">🎨 Design</option>
+                <option value="Programming">💻 Programming</option>
+            </select>
+        </div>
+        <div class="rd-sel">
+            <select id="rd-lvl" onchange="rdRender()">
+                <option value="">All Levels</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+            </select>
+        </div>
+        <div class="rd-sel">
+            <select id="rd-price" onchange="rdRender()">
+                <option value="">All Prices</option>
+                <option value="free">🆓 Free Only</option>
+                <option value="trial">🔓 Free Trial</option>
+                <option value="paid">💸 Discounted</option>
+            </select>
+        </div>
+        <div class="rd-count"><b id="rd-cnt">0</b> courses</div>
     </div>
-    <div class="rd-sel">
-      <select id="rd-cat" onchange="rdRender()">
-        <option value="">All Categories</option>
-        __CATEGORY_OPTIONS__
-      </select>
-    </div>
-    <div class="rd-sel">
-      <select id="rd-lvl" onchange="rdRender()">
-        <option value="">All Levels</option>
-        <option value="Beginner">Beginner</option>
-        <option value="Intermediate">Intermediate</option>
-      </select>
-    </div>
-    <div class="rd-sel">
-      <select id="rd-price" onchange="rdRender()">
-        <option value="">All Prices</option>
-        <option value="free">🆓 Free Only</option>
-        <option value="trial">🔓 Free Trial</option>
-        <option value="paid">💸 Discounted</option>
-      </select>
-    </div>
-    <div class="rd-count"><b id="rd-cnt">0</b> courses</div>
-  </div>
 
-  <!-- SORT CHIPS -->
-  <div class="rd-sorts">
-    <span class="rd-sort-lbl">Filter:</span>
-    <button class="rd-sc on" onclick="rdSort('all',this)">All</button>
-    <button class="rd-sc"    onclick="rdSort('free',this)">🆓 100% Free</button>
-    <button class="rd-sc"    onclick="rdSort('cert',this)">🏆 Certificates</button>
-    <button class="rd-sc"    onclick="rdSort('ai',this)">🤖 AI &amp; ML</button>
-    <button class="rd-sc"    onclick="rdSort('new',this)">⚡ New</button>
-    <button class="rd-sc"    onclick="rdSort('top',this)">⭐ Top Rated</button>
-  </div>
+    <!-- SORT CHIPS -->
+    <div class="rd-sorts">
+        <span class="rd-sort-lbl">Filter:</span>
+        <button class="rd-sc on" onclick="rdSort('all',this)">All</button>
+        <button class="rd-sc"    onclick="rdSort('free',this)">🆓 100% Free</button>
+        <button class="rd-sc"    onclick="rdSort('cert',this)">🏆 Certificates</button>
+        <button class="rd-sc"    onclick="rdSort('ai',this)">🤖 AI &amp; ML</button>
+        <button class="rd-sc"    onclick="rdSort('new',this)">⚡ New</button>
+        <button class="rd-sc"    onclick="rdSort('top',this)">⭐ Top Rated</button>
+    </div>
 
-  <!-- GRID -->
-  <div class="rd-grid" id="rd-grid"></div>
+    <!-- GRID -->
+    <div class="rd-grid" id="rd-grid"></div>
 
-  <!-- FOOTNOTE -->
-  <div class="rd-footnote">
-    Sources: <strong>Google · DeepLearning.AI · Coursera · edX · freeCodeCamp · Microsoft · AWS · Cisco · Khan Academy · Udemy · Canva · Figma · University of Helsinki</strong><br>
-    Some links are affiliate links — they support Rooted Dreams at no extra cost to you. Data updated daily via GitHub Actions.
-  </div>
+    <!-- FOOTNOTE -->
+    <div class="rd-footnote">
+        Sources: <strong>Google · DeepLearning.AI · Coursera · edX · freeCodeCamp · Microsoft · AWS · Cisco · Khan Academy · Udemy · Canva · Figma · University of Helsinki</strong><br>
+        Some links are affiliate links — they support Rooted Dreams at no extra cost to you. Data updated daily via GitHub Actions.
+    </div>
 
 </div><!-- end .rd-tracker -->
 
 <script>
-// Data baked in at build time by scraper/build.py — no fetch, instant load
-// ── DATA: fetched from GitHub, cached in localStorage for the day ──────────
-const RD_DATA_URL = 'https://cdn.jsdelivr.net/gh/RootedDreamsBlog/Web-Tools-Lab@main/free-courses-tracker/data/courses.json';
-const RD_CACHE_KEY = 'rd_courses_v1';
-const RD_CACHE_DATE_KEY = 'rd_courses_date_v1';
-let RD_COURSES = [];
+    // Data baked in at build time by scraper/build.py — no fetch, instant load
+    // ── DATA: fetched from GitHub, cached in localStorage for the day ──────────
+    // jsDelivr CDN — mirrors GitHub with global edge caching + correct CORS headers
+    // Much faster than raw.githubusercontent.com when embedded on external sites
+    const RD_DATA_URL = 'https://cdn.jsdelivr.net/gh/RootedDreamsBlog/Web-Tools-Lab@main/free-courses-tracker/data/courses.json';
+    const RD_CACHE_KEY = 'rd_courses_v2';
+    const RD_CACHE_DATE_KEY = 'rd_courses_date_v2';
+    let RD_COURSES = [];
 
-async function rdLoadData() {
-  const today = new Date().toISOString().slice(0, 10);
-  const cachedDate = localStorage.getItem(RD_CACHE_DATE_KEY);
-  const cachedData = localStorage.getItem(RD_CACHE_KEY);
+    async function rdLoadData() {
+        const today = new Date().toISOString().slice(0, 10);
+        const cachedDate = localStorage.getItem(RD_CACHE_DATE_KEY);
+        const cachedData = localStorage.getItem(RD_CACHE_KEY);
 
-  // Use cache if it's from today — instant, no network request
-  if (cachedDate === today && cachedData) {
-    try {
-      RD_COURSES = JSON.parse(cachedData);
-      rdUpdateStats();
-      rdLoadData();
-      return;
-    } catch(e) { /* cache corrupt, fall through to fetch */ }
-  }
+        // Use cache if it's from today — instant, no network request
+        if (cachedDate === today && cachedData) {
+            try {
+                RD_COURSES = JSON.parse(cachedData);
+                rdUpdateStats();
+                rdRender();
+                return;
+            } catch(e) { /* cache corrupt, fall through to fetch */ }
+        }
 
-  // Show skeleton cards while fetching
-  rdShowSkeleton();
+        // Show skeleton cards while fetching
+        rdShowSkeleton();
 
-  try {
-    const res = await fetch(RD_DATA_URL + '?v=' + today);
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    RD_COURSES = await res.json();
-    // Cache for the rest of today
-    localStorage.setItem(RD_CACHE_KEY, JSON.stringify(RD_COURSES));
-    localStorage.setItem(RD_CACHE_DATE_KEY, today);
-    rdUpdateStats();
-    rdRender();
-  } catch(err) {
-    // If fetch fails, try the stale cache rather than showing an error
-    if (cachedData) {
-      try {
-        RD_COURSES = JSON.parse(cachedData);
-        rdUpdateStats();
-        rdRender();
-        return;
-      } catch(e) {}
+        try {
+            const res = await fetch(RD_DATA_URL + '?v=' + today);
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            RD_COURSES = await res.json();
+            // Cache for the rest of today
+            localStorage.setItem(RD_CACHE_KEY, JSON.stringify(RD_COURSES));
+            localStorage.setItem(RD_CACHE_DATE_KEY, today);
+            rdUpdateStats();
+            rdRender();
+        } catch(err) {
+            // If fetch fails, try the stale cache rather than showing an error
+            if (cachedData) {
+                try {
+                    RD_COURSES = JSON.parse(cachedData);
+                    rdUpdateStats();
+                    rdRender();
+                    return;
+                } catch(e) {}
+            }
+            document.getElementById('rd-grid').innerHTML =
+                '<div class="rd-empty"><div class="rd-empty-ico">⚠️</div>' +
+                '<h3>Could not load courses</h3>' +
+                '<p>Please check your internet connection and refresh the page.</p></div>';
+        }
     }
-    document.getElementById('rd-grid').innerHTML =
-      '<div class="rd-empty"><div class="rd-empty-ico">⚠️</div>' +
-      '<h3>Could not load courses</h3>' +
-      '<p>Please check your internet connection and refresh the page.</p></div>';
-  }
-}
 
-function rdUpdateStats() {
-  // All values calculated live from fetched data — never stale
-  const total     = RD_COURSES.length;
-  const freeCount = RD_COURSES.filter(c => c.price?.toLowerCase() === 'free').length;
-  const platforms = new Set(RD_COURSES.map(c => c.platform).filter(Boolean)).size;
+    function rdUpdateStats() {
+        // All values calculated live from fetched data — never stale
+        const total     = RD_COURSES.length;
+        const freeCount = RD_COURSES.filter(c => c.price?.toLowerCase() === 'free').length;
+        const platforms = new Set(RD_COURSES.map(c => c.platform).filter(Boolean)).size;
 
-  // Most recent scraped_at date in the dataset
-  const dates = RD_COURSES.map(c => c.scraped_at).filter(Boolean).sort();
-  const latestDate = dates.length
-    ? new Date(dates[dates.length - 1]).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
-    : new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+        // Most recent scraped_at date in the dataset
+        const dates = RD_COURSES.map(c => c.scraped_at).filter(Boolean).sort();
+        const latestDate = dates.length
+            ? new Date(dates[dates.length - 1]).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
+            : new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 
-  const totalEl = document.getElementById('rd-total');
-  const freeEl  = document.getElementById('rd-free');
-  const platEl  = document.getElementById('rd-plat-count');
-  const dateEl  = document.getElementById('rd-updated-date');
+        const totalEl = document.getElementById('rd-total');
+        const freeEl  = document.getElementById('rd-free');
+        const platEl  = document.getElementById('rd-plat-count');
+        const dateEl  = document.getElementById('rd-updated-date');
 
-  if (totalEl) totalEl.textContent = total + '+';
-  if (freeEl)  freeEl.textContent  = freeCount + '+';
-  if (platEl)  platEl.textContent  = platforms;
-  if (dateEl)  dateEl.textContent  = latestDate;
-}
+        if (totalEl) totalEl.textContent = total + '+';
+        if (freeEl)  freeEl.textContent  = freeCount + '+';
+        if (platEl)  platEl.textContent  = platforms;
+        if (dateEl)  dateEl.textContent  = latestDate;
+    }
 
-function rdShowSkeleton() {
-  const grid = document.getElementById('rd-grid');
-  grid.innerHTML = Array(6).fill(0).map(() => `
+    function rdShowSkeleton() {
+        const grid = document.getElementById('rd-grid');
+        grid.innerHTML = Array(6).fill(0).map(() => `
     <div class="rd-card rd-skeleton">
       <div class="rd-skel-top"></div>
       <div class="rd-skel-title"></div>
@@ -522,114 +539,114 @@ function rdShowSkeleton() {
       <div class="rd-skel-line rd-skel-short"></div>
       <div class="rd-skel-btn"></div>
     </div>`).join('');
-}
+    }
 
-let rdActivePlat = '';
-let rdActiveSort = 'all';
+    let rdActivePlat = '';
+    let rdActiveSort = 'all';
 
-// ── PLATFORM ────────────────────────────────────────────
-function rdPlat(p, btn) {
-  rdActivePlat = p;
-  document.querySelectorAll('.rd-pp').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  rdRender();
-}
+    // ── PLATFORM ────────────────────────────────────────────
+    function rdPlat(p, btn) {
+        rdActivePlat = p;
+        document.querySelectorAll('.rd-pp').forEach(b => b.classList.remove('on'));
+        btn.classList.add('on');
+        rdRender();
+    }
 
-// ── SORT ─────────────────────────────────────────────────
-function rdSort(s, btn) {
-  rdActiveSort = s;
-  document.querySelectorAll('.rd-sc').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  rdRender();
-}
+    // ── SORT ─────────────────────────────────────────────────
+    function rdSort(s, btn) {
+        rdActiveSort = s;
+        document.querySelectorAll('.rd-sc').forEach(b => b.classList.remove('on'));
+        btn.classList.add('on');
+        rdRender();
+    }
 
-// ── FILTER ───────────────────────────────────────────────
-function rdFiltered() {
-  const q   = document.getElementById('rd-search').value.toLowerCase().trim();
-  const cat = document.getElementById('rd-cat').value;
-  const lvl = document.getElementById('rd-lvl').value;
-  const prc = document.getElementById('rd-price').value;
+    // ── FILTER ───────────────────────────────────────────────
+    function rdFiltered() {
+        const q   = document.getElementById('rd-search').value.toLowerCase().trim();
+        const cat = document.getElementById('rd-cat').value;
+        const lvl = document.getElementById('rd-lvl').value;
+        const prc = document.getElementById('rd-price').value;
 
-  return RD_COURSES.filter(c => {
-    const p = (c.price||'').toLowerCase();
-    if (q && ![c.title,c.platform,c.description,c.category].some(f=>f?.toLowerCase().includes(q))) return false;
-    if (cat && c.category !== cat) return false;
-    if (lvl && c.level !== lvl) return false;
-    if (rdActivePlat && c.platform !== rdActivePlat) return false;
-    if (prc==='free'  && p!=='free') return false;
-    if (prc==='trial' && p!=='free trial') return false;
-    if (prc==='paid'  && (p==='free'||p==='free trial')) return false;
-    if (rdActiveSort==='free'  && p!=='free') return false;
-    if (rdActiveSort==='cert'  && !c.badge?.toLowerCase().match(/cert|harvard|university|microsoft|google/)) return false;
-    if (rdActiveSort==='ai'    && c.category!=='AI & ML') return false;
-    if (rdActiveSort==='new'   && !c.badge?.match(/New|⚡/)) return false;
-    if (rdActiveSort==='top'   && (c.rating||0)<4.8) return false;
-    return true;
-  });
-}
+        return RD_COURSES.filter(c => {
+            const p = (c.price||'').toLowerCase();
+            if (q && ![c.title,c.platform,c.description,c.category].some(f=>f?.toLowerCase().includes(q))) return false;
+            if (cat && c.category !== cat) return false;
+            if (lvl && c.level !== lvl) return false;
+            if (rdActivePlat && c.platform !== rdActivePlat) return false;
+            if (prc==='free'  && p!=='free') return false;
+            if (prc==='trial' && p!=='free trial') return false;
+            if (prc==='paid'  && (p==='free'||p==='free trial')) return false;
+            if (rdActiveSort==='free'  && p!=='free') return false;
+            if (rdActiveSort==='cert'  && !c.badge?.toLowerCase().match(/cert|harvard|university|microsoft|google/)) return false;
+            if (rdActiveSort==='ai'    && c.category!=='AI & ML') return false;
+            if (rdActiveSort==='new'   && !c.badge?.match(/New|⚡/)) return false;
+            if (rdActiveSort==='top'   && (c.rating||0)<4.8) return false;
+            return true;
+        });
+    }
 
-// ── HELPERS ──────────────────────────────────────────────
-function rdPlatClass(p) {
-  const m = {
-    'Google':'rp-google','DeepLearning.AI':'rp-dl','Coursera':'rp-coursera',
-    'Udemy':'rp-udemy','edX':'rp-edx','freeCodeCamp':'rp-fcc','Cisco':'rp-cisco',
-    'Khan Academy':'rp-khan','Microsoft Learn':'rp-ms','AWS Training':'rp-aws',
-    'Canva':'rp-canva','Figma':'rp-figma','The Odin Project':'rp-odin'
-  };
-  return m[p]||'rp-default';
-}
+    // ── HELPERS ──────────────────────────────────────────────
+    function rdPlatClass(p) {
+        const m = {
+            'Google':'rp-google','DeepLearning.AI':'rp-dl','Coursera':'rp-coursera',
+            'Udemy':'rp-udemy','edX':'rp-edx','freeCodeCamp':'rp-fcc','Cisco':'rp-cisco',
+            'Khan Academy':'rp-khan','Microsoft Learn':'rp-ms','AWS Training':'rp-aws',
+            'Canva':'rp-canva','Figma':'rp-figma','The Odin Project':'rp-odin'
+        };
+        return m[p]||'rp-default';
+    }
 
-function rdBadgeClass(b) {
-  if (!b) return 'rb-brand';
-  const s = b.toLowerCase();
-  if (s.includes('popular')||s.includes('hot')) return 'rb-hot';
-  if (s.includes('certif'))  return 'rb-cert';
-  if (s.includes('harvard')) return 'rb-harvard';
-  if (s.includes('univers')) return 'rb-cert';
-  if (s.includes('%'))       return 'rb-disc';
-  if (s.includes('new')||s.includes('⚡')) return 'rb-new';
-  if (s.includes('free')&&!s.includes('trial')) return 'rb-free';
-  if (s.includes('microsoft')||s.includes('🏢')) return 'rb-ms';
-  if (s.includes('aws')||s.includes('☁️')) return 'rb-aws';
-  if (s.includes('cisco')||s.includes('🛡')) return 'rb-shield';
-  if (s.includes('open source')) return 'rb-os';
-  return 'rb-brand';
-}
+    function rdBadgeClass(b) {
+        if (!b) return 'rb-brand';
+        const s = b.toLowerCase();
+        if (s.includes('popular')||s.includes('hot')) return 'rb-hot';
+        if (s.includes('certif'))  return 'rb-cert';
+        if (s.includes('harvard')) return 'rb-harvard';
+        if (s.includes('univers')) return 'rb-cert';
+        if (s.includes('%'))       return 'rb-disc';
+        if (s.includes('new')||s.includes('⚡')) return 'rb-new';
+        if (s.includes('free')&&!s.includes('trial')) return 'rb-free';
+        if (s.includes('microsoft')||s.includes('🏢')) return 'rb-ms';
+        if (s.includes('aws')||s.includes('☁️')) return 'rb-aws';
+        if (s.includes('cisco')||s.includes('🛡')) return 'rb-shield';
+        if (s.includes('open source')) return 'rb-os';
+        return 'rb-brand';
+    }
 
-function rdPriceHTML(c) {
-  const p = (c.price||'').toLowerCase();
-  if (p==='free')       return `<span class="rd-pfree">FREE</span>`;
-  if (p==='free trial') return `<div class="rd-pg"><span class="rd-ptrial">Free Trial</span><span class="rd-pwas">then ${c.original_price}</span></div>`;
-  return `<div class="rd-pg"><span class="rd-ppaid">${c.price}</span><span class="rd-pwas">${c.original_price}</span></div>`;
-}
+    function rdPriceHTML(c) {
+        const p = (c.price||'').toLowerCase();
+        if (p==='free')       return `<span class="rd-pfree">FREE</span>`;
+        if (p==='free trial') return `<div class="rd-pg"><span class="rd-ptrial">Free Trial</span><span class="rd-pwas">then ${c.original_price}</span></div>`;
+        return `<div class="rd-pg"><span class="rd-ppaid">${c.price}</span><span class="rd-pwas">${c.original_price}</span></div>`;
+    }
 
-function rdExpiry(d) {
-  if (!d) return '';
-  const days = Math.ceil((new Date(d)-new Date())/86400000);
-  return (days>0&&days<=7)?`<span class="rd-exp">⏰ ${days}d left</span>`:'';
-}
+    function rdExpiry(d) {
+        if (!d) return '';
+        const days = Math.ceil((new Date(d)-new Date())/86400000);
+        return (days>0&&days<=7)?`<span class="rd-exp">⏰ ${days}d left</span>`:'';
+    }
 
-function rdBtnCfg(c) {
-  const p = (c.price||'').toLowerCase();
-  if (p==='free')       return {cls:'rb-btn-free', lbl:'🎓 Enroll Free →'};
-  if (p==='free trial') return {cls:'rb-btn-trial',lbl:'▶ Start Free Trial →'};
-  return {cls:'rb-btn-paid',lbl:'⚡ Get This Deal →'};
-}
+    function rdBtnCfg(c) {
+        const p = (c.price||'').toLowerCase();
+        if (p==='free')       return {cls:'rb-btn-free', lbl:'🎓 Enroll Free →'};
+        if (p==='free trial') return {cls:'rb-btn-trial',lbl:'▶ Start Free Trial →'};
+        return {cls:'rb-btn-paid',lbl:'⚡ Get This Deal →'};
+    }
 
-// ── RENDER ───────────────────────────────────────────────
-function rdRender() {
-  const list = rdFiltered();
-  document.getElementById('rd-cnt').textContent = list.length;
-  const grid = document.getElementById('rd-grid');
+    // ── RENDER ───────────────────────────────────────────────
+    function rdRender() {
+        const list = rdFiltered();
+        document.getElementById('rd-cnt').textContent = list.length;
+        const grid = document.getElementById('rd-grid');
 
-  if (!list.length) {
-    grid.innerHTML = `<div class="rd-empty"><div class="rd-empty-ico">🔍</div><h3>No courses found</h3><p>Try different filters or clear your search.</p></div>`;
-    return;
-  }
+        if (!list.length) {
+            grid.innerHTML = `<div class="rd-empty"><div class="rd-empty-ico">🔍</div><h3>No courses found</h3><p>Try different filters or clear your search.</p></div>`;
+            return;
+        }
 
-  grid.innerHTML = list.map((c, i) => {
-    const btn = rdBtnCfg(c);
-    return `
+        grid.innerHTML = list.map((c, i) => {
+            const btn = rdBtnCfg(c);
+            return `
     <article class="rd-card" style="animation-delay:${Math.min(i*0.03,0.36)}s">
       <div class="rd-ctop">
         <span class="rd-plbl ${rdPlatClass(c.platform)}">${c.platform}</span>
@@ -652,11 +669,11 @@ function rdRender() {
       </div>
       <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="rd-btn ${btn.cls}">${btn.lbl}</a>
     </article>`;
-  }).join('');
-}
+        }).join('');
+    }
 
-// Run immediately — data is already in the page, no fetch needed
-rdRender();
+    // Run immediately — data is already in the page, no fetch needed
+    rdRender();
 </script>
 </body>
 </html>
