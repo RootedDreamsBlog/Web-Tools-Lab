@@ -1629,5 +1629,22 @@
     "expires": null,
     "id": 98,
     "scraped_at": "2026-03-22T21:19:07.944576+00:00"
+  },
+  {
+    "title": "Introduction to Data Analytics",
+    "platform": "Coursera",
+    "category": "Business & Data",
+    "level": "Beginner",
+    "price": "Free",
+    "original_price": "Free Audit",
+    "rating": 4.6,
+    "students": "N/A",
+    "duration": "Self-paced",
+    "badge": "🆓 Free Audit",
+    "description": "Free to audit on Coursera: Introduction to Data Analytics",
+    "link": "https://www.coursera.org/learn/introduction-to-data-analytics",
+    "expires": null,
+    "id": 99,
+    "scraped_at": "2026-03-24T07:00:13.274292+00:00"
   }
 ]
