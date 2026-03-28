@@ -1646,5 +1646,39 @@
     "expires": null,
     "id": 99,
     "scraped_at": "2026-03-24T07:00:13.274292+00:00"
+  },
+  {
+    "title": "Code Free Data Science",
+    "platform": "Coursera",
+    "category": "AI & ML",
+    "level": "Beginner",
+    "price": "Free",
+    "original_price": "Free Audit",
+    "rating": 4.6,
+    "students": "N/A",
+    "duration": "Self-paced",
+    "badge": "🆓 Free Audit",
+    "description": "Free to audit on Coursera: Code Free Data Science",
+    "link": "https://www.coursera.org/learn/code-free-data-science",
+    "expires": null,
+    "id": 100,
+    "scraped_at": "2026-03-28T07:07:01.700602+00:00"
+  },
+  {
+    "title": "Error-Free Healthcare Data Entry",
+    "platform": "Coursera",
+    "category": "Programming",
+    "level": "Beginner",
+    "price": "Free",
+    "original_price": "Free Audit",
+    "rating": 4.6,
+    "students": "N/A",
+    "duration": "Self-paced",
+    "badge": "🆓 Free Audit",
+    "description": "Free to audit on Coursera: Error-Free Healthcare Data Entry",
+    "link": "https://www.coursera.org/learn/error-free-healthcare-data-entry",
+    "expires": null,
+    "id": 101,
+    "scraped_at": "2026-03-28T07:07:01.700628+00:00"
   }
 ]
